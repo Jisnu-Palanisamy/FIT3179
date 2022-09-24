@@ -28,8 +28,8 @@
       "bind": {
         "input": "range",
         "min": 0,
-        "max": 550000,
-        "step": 100,
+        "max": 100000000,
+        "step": 1000000,
         "name": "Population: "
       }
     }
