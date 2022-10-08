@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 600,
+  "width": "container",
   "height": 500,
   "title": "Total Deaths, Total Cases and Death Percentage Per Country",
   "data": {
