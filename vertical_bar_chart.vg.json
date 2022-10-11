@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"
+  },
+  "params": [
+    {"name": "highlight", "select": {"type": "point", "on": "mouseover"}},
+    {"name": "select", "select": "point"}
+  ],
+  "hconcat": [
+    {
+      "width": 300,
+      "height": 500,
+      "mark": {
+        "type": "bar",
+        "tooltip": true,
+        "stroke": "black",
+        "cursor": "pointer"
+      },
+      "title": "Sum of Total Cases In Each Continent",
+      "encoding": {
+        "x": {"field": "Continent", "type": "nominal"},
+        "y": {
+          "aggregate": "sum",
+          "field": "TotalCases",
+          "type": "quantitative",
+          "axis": {"domain": false, "grid": false, "ticks": false},
+          "title": "Sum of Total Cases"
+        },
+        "color": {"field": "Continent", "type": "nominal", "legend": null},
+        "fillOpacity": {
+          "condition": {"param": "select", "value": 1},
+          "value": 0.3
+        },
+        "tooltip": [
+          {"field": "Continent"},
+          {
+            "field": "TotalCases",
+            "aggregate": "sum",
+            "title": "Sum of Total Cases",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "width": 300,
+      "height": 500,
+      "mark": {
+        "type": "bar",
+        "tooltip": true,
+        "stroke": "black",
+        "cursor": "pointer"
+      },
+      "title": "Sum of Total Deaths In Each Continent",
+      "encoding": {
+        "x": {"field": "Continent", "type": "nominal"},
+        "y": {
+          "aggregate": "sum",
+          "field": "TotalDeaths",
+          "type": "quantitative",
+          "axis": {"domain": false, "grid": false, "ticks": false},
+          "title": "Sum of Total Deaths"
+        },
+        "color": {"field": "Continent", "type": "nominal"},
+        "fillOpacity": {
+          "condition": {"param": "select", "value": 1},
+          "value": 0.3
+        },
+        "tooltip": [
+          {"field": "Continent"},
+          {
+            "field": "TotalDeaths",
+            "aggregate": "sum",
+            "title": "Sum of Total Deaths",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
