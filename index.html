@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Homework Week 10</title>
+    <title>Data Visualisation 2(Draft)</title>
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -25,7 +25,9 @@
 
     <div class="page">
         
-            <h2>Choropleth Map With A Population And Rotation Slider</h2>
+            <p>World Covid-19 Cases In The Year of 2020
+        
+            <h2>Choropleth World Map Which Shows The Confirmed Cases Per 1 Million Population </h2>
             <!-- pure grid group -->
             <div class="pure-g">
                 <div class="pure-u-1-1">
@@ -36,12 +38,49 @@
             <br>
 
             <hr class="hr3">
-
-            <h2>Bubble Plot With Continent and Population Filter With Legend, Drop-Down and Slider</h2>
+        
+            <h2>Sum of Total Cases and Deaths In Each Continent</h2>
             <!-- pure grid group -->
             <div class="pure-g">
                 <div class="pure-u-1-1">
                     <div id="vis2" class="vis-container"></div>
+                </div>
+            </div>
+            <!-- end pure grid group -->
+            <br>
+
+            <hr class="hr3">
+
+
+            <h2>The Top 10 Countries</h2>
+            <!-- pure grid group -->
+            <div class="pure-g">
+                <div class="pure-u-1-1">
+                    <div id="vis3" class="vis-container"></div>
+                </div>
+            </div>
+            <!-- end pure grid group -->
+            <br>
+
+            <hr class="hr3">
+        
+            <h2>Total Death Percentage In Each Continent</h2>
+            <!-- pure grid group -->
+            <div class="pure-g">
+                <div class="pure-u-1-1">
+                    <div id="vis4" class="vis-container"></div>
+                </div>
+            </div>
+            <!-- end pure grid group -->
+            <br>
+
+            <hr class="hr3">
+
+            <h2>Bubble Plot Which Shows The Total Cases, Total Deaths and Death Percentage Per Country</h2>
+            <!-- pure grid group -->
+            <div class="pure-g">
+                <div class="pure-u-1-1">
+                    <div id="vis5" class="vis-container"></div>
                 </div>
             </div>
             <!-- end pure grid group -->
@@ -50,6 +89,7 @@
 
             <div class="pure-g">
                 <div class="pure-u-1-1 small-font">
+                    <p>Created and Designed By: Jisnu Palanisamy (FIT3179 Semester 2 2022)
                 </div>
             </div>
 
@@ -59,9 +99,18 @@
     <script type="text/javascript">
         var specVis1 = "choropleth_map.vg.json";
         vegaEmbed('#vis1', specVis1);
-
-        var specVis2 = "bubble_plot.vg.json";
+        
+        var specVis2 = "vertical_bar_chart.vg.json";
         vegaEmbed('#vis2', specVis2);
+
+        var specVis3 = "horizontal_bar_chart.vg.json";
+        vegaEmbed('#vis3', specVis3);
+        
+        var specVis4 = "donut_chart.vg.json";
+        vegaEmbed('#vis4', specVis4);
+        
+        var specVis5 = "bubble_plot.vg.json";
+        vegaEmbed('#vis5', specVis5);
 
         print(brush)
     </script>
