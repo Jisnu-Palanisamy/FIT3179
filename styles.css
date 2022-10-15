@@ -1,11 +1,11 @@
-#choropleth_map {left: 100px; right: 100px;}
+#vis1 {left: 100px; right: 100px;}
 
-#bubble_plot {left: 100px; right: 100px;}
+#vis2 {left: 100px; right: 100px;}
 
-#horizontal_bar_chart {left: 100px; right: 100px;}
+#vis3 {left: 100px; right: 100px;}
 
-#donut_chart {left: 100px; right: 100px;}
+#vis4 {left: 100px; right: 100px;}
 
-#area_chart {left: 100px; right: 100px;}
+#vis5 {left: 100px; right: 100px;}
 
 body {font-family: 'Source Sans Pro', sans-serif;}
