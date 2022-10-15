@@ -1,21 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "autosize": {"resize": true},
   "data": {
     "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/ne_110m_admin_0_countries.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
     "params": [
-      { "name": "cornerRadius", "value": 50},
-    {
-      "name": "rotate0",
-      "value": 0,
-      "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
-    },
-    {
-      "name": "rotate1",
-      "value": 0,
-      "bind": {"input": "range", "min": -90, "max": 90, "step": 1}
-    },
+    { "name": "cornerRadius", "value": 50},
     {
       "name": "Cases_Above",
       "value": 0,
@@ -30,10 +21,10 @@
   ],
   "vconcat": [
     {
-      "title": "Worldwide COVID-19 Confirmed Cases 2020",
-      "width": 600,
+      "width": 700,
       "height": 500,
-      "projection": {"type": "orthographic", "rotate": {"expr": "[rotate0, rotate1, 0]"}},
+      "title": "Worldwide COVID-19 Confirmed Cases 2020",
+      "projection": {"type": "equalEarth"},
       "layer": [
         {
           "transform": [
@@ -77,7 +68,7 @@
             },
             {"filter": "datum.Population > Cases_Above"}
           ],
-          "mark": {"type": "geoshape", "stroke": "white"},
+          "mark": {"type": "geoshape", "stroke": "white", "cursor": "pointer"},
           "params": [{"name": "countrySelection", "select": {"type": "point", "on": "click", "resolve": "global"}}], 
           "encoding": {
             "color": {
@@ -95,10 +86,8 @@
                 "title": "Country"
               },
               {"field": "TotalCases", "type": "quantitative", "format": ",", "title": "Total Cases"},
-              {
-                "field": "Confirmed Cases Per 1 Million Population",
-                "type": "quantitative",
-                "format": ","
+              {"field": "Confirmed Cases Per 1 Million Population",
+               "type": "quantitative", "format": ","
               },
               {
                 "field": "Population",
@@ -106,6 +95,33 @@
                 "format": ","
               }
             ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "lookup": "properties.NAME",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/countryInfo.csv"
+                },
+                "key": "name",
+                "fields": ["latitude", "longitude"]
+              }
+            }
+          ],
+          "mark": {"type": "text"},
+          "encoding": {
+            "longitude": {"field": "longitude", "type": "quantitative"},
+            "latitude": {"field": "latitude", "type": "quantitative"},
+            "text": {"field": "properties.NAME", "type": "nominal"},
+            "opacity": {
+              "condition": {
+                "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Malaysia' ||  datum['properties.NAME'] == 'Cameroon' ||  datum['properties.NAME'] == 'United States of America'",
+                "value": 1
+              },
+              "value": 0
+            }
           }
         }
       ]
@@ -133,8 +149,7 @@
       "encoding": {
         "x": {
           "field": "Confirmed Cases Per 1 Million Population",
-          "type": "quantitative",
-          "title": "Confirmed Cases"
+          "type": "quantitative"
         },
         "y": {"field": "properties.NAME", "type": "nominal", "title": null},
         "tooltip": [{"field": "properties.NAME", "type": "nominal", "title": "Country"},
@@ -142,5 +157,9 @@
       }
     }
   ],
-  "config": {}
+      "config"    : {
+                 "legend": {"labelFont": "Sans-serif", "titleFont": "Sans-serif", "titleLimit": 0},
+                 "title" : {"font": "Sans-serif", "fontWeight": "bold", "fontSize": 24, "fontStyle": "italic"},
+                 "style" : {"cell": {"stroke": "transparent"}},
+                 "text"  : {"align": "center", "fontWeight": "bold", "font": "Sans-serif"}}
 }
