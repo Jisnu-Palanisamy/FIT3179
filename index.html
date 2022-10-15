@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Data Visualisation 2</title>
+    <title>Data Visualisation 2 (Draft)</title>
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -35,49 +35,11 @@
             <!-- end pure grid group -->
             <br>
 
-            <hr class="hr3">
-        
-            <h2>Sum of Total Cases and Deaths In Each Continent</h2>
-            <!-- pure grid group -->
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <div id="vis2" class="vis-container"></div>
-                </div>
-            </div>
-            <!-- end pure grid group -->
-            <br>
-
-            <hr class="hr3">
-
-
-            <!-- pure grid group -->
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <div id="vis3" class="vis-container"></div>
-                </div>
-            </div>
-            <!-- end pure grid group -->
-            <br>
-
-            <hr class="hr3">
-        
-            <h2>Total Death Percentage In Each Continent</h2>
-            <!-- pure grid group -->
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <div id="vis4" class="vis-container"></div>
-                </div>
-            </div>
-            <!-- end pure grid group -->
-            <br>
-
-            <hr class="hr3">
-
             <h2>Bubble Plot Which Shows The Total Cases, Total Deaths and Death Percentage Per Country</h2>
             <!-- pure grid group -->
             <div class="pure-g">
                 <div class="pure-u-1-1">
-                    <div id="vis5" class="vis-container"></div>
+                    <div id="vis2" class="vis-container"></div>
                 </div>
             </div>
             <!-- end pure grid group -->
@@ -96,18 +58,9 @@
     <script type="text/javascript">
         var specVis1 = "choropleth_map.vg.json";
         vegaEmbed('#vis1', specVis1);
-        
-        var specVis2 = "vertical_bar_chart.vg.json";
-        vegaEmbed('#vis2', specVis2);
 
-        var specVis3 = "horizontal_bar_chart.vg.json";
-        vegaEmbed('#vis3', specVis3);
-        
-        var specVis4 = "donut_chart.vg.json";
-        vegaEmbed('#vis4', specVis4);
-        
-        var specVis5 = "bubble_plot.vg.json";
-        vegaEmbed('#vis5', specVis5);
+        var specVis2 = "bubble_plot.vg.json";
+        vegaEmbed('#vis2', specVis2);
 
         print(brush)
     </script>
