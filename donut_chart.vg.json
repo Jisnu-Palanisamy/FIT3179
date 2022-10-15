@@ -1,37 +1,73 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 450,
-  "title": "Total Death Percentage In Each Continent",
-  "data": {
-    "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"
-  },
-  "transform": [
+  "width": 700,
+  "height": 500,
+  "title": "How Much Each Continent Contributes To The Death Percentage",
+  "params": [
     {
-      "window": [{"op": "sum", "field": "TotalDeaths", "as": "Total_Deaths"}],
-      "frame": [null, null]
+      "name": "limit",
+      "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 150, "step": 1}
     },
     {
-      "calculate": "datum.TotalDeaths/datum.Total_Deaths * 100",
-      "as": "PercentOfTotal"
-    }
-  ],
-  "layer": [
-    {"mark": {"type": "arc", "innerRadius": 120, "tooltip": true}},
+      "name": "font",
+      "value": "sans-serif",
+      "bind": {
+        "input": "select",
+        "options": ["sans-serif", "serif", "monospace"]
+      }
+    },
     {
-      "mark": {"type": "text", "radius": 300},
-      "encoding": {"text": {"field": "Continent", "type": "nominal"}}
+      "name": "fontWeight",
+      "value": "normal",
+      "bind": {"input": "select", "options": ["normal", "bold"]}
     }
   ],
+  "data": {
+     "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"
+  },
+  "transform": [{
+    "joinaggregate": [{
+      "op": "sum",
+      "field": "TotalDeathsPer1MPop",
+      "as": "Total_Deaths"
+    }]
+  },
+  {
+    "calculate": "datum.TotalDeathsPer1MPop/datum.Total_Deaths * 100", "as": "PercentOfTotal"
+  }],
+    "layer": [{
+    "selection": {
+    "highlight": {"type": "single"}
+  },
+    "mark": {"type": "arc", "innerRadius": 120, "stroke": "black", "cursor": "pointer"}
+  }, {
+    "mark": {
+        "type": "text",
+        "radius": 300,
+        "dx": -50,
+        "dy": 30,
+        "angle": -45,
+        "yOffset": -60,
+        "xOffset": 10,
+        "align": "center",
+        "font": {"expr": "font"},
+        "fontWeight": {"expr": "fontWeight"},
+        "limit": {"expr": "limit"}
+      },
+    "encoding": {"text": {"field": "Continent", "type": "nominal"}}
+  }],
   "encoding": {
     "theta": {
-      "field": "PercentOfTotal",
-      "type": "quantitative",
-      "aggregate": "sum",
-      "stack": "normalize",
-      "title": "Death Percentage"
+          "field": "PercentOfTotal", "type": "quantitative", "aggregate":"sum", "title": "Death Percentage", "stack":true},
+          "color": {"field": "Continent", "type": "nominal", "legend": null},
+              "fillOpacity": {
+      "condition": {"selection": "highlight", "value": 1},
+      "value": 0.5
     },
-    "color": {"field": "Continent", "type": "nominal", "legend": null}
-  },
-  "config": {}
+    "tooltip": [{"field": "Continent"}, 
+    {"field": "PercentOfTotal", "aggregate": "sum", "title": "Total Death Percentage", "format": ".2f"}]
+},
+    "config": {"title" : {"font": "Sans-Serif", "fontSize": 24, "fontWeight": "bold", "fontStyle": "italic"},
+               "text"  : {"fontWeight": "bold", "font": "Sans-Serif"}}
 }
