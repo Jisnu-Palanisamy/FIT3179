@@ -1,12 +1,21 @@
-#vis1 {left: 100px; right: 100px;}
+.vis-container {
+    width: 100%;
+    padding-left: 50px;
+}
 
-#vis2 {left: 100px; right: 100px;}
+.vis-container2 {
+    width: 100%;
+    padding-right: 50px;
+}
 
-#vis3 {left: 100px; right: 100px;}
-
-#vis4 {left: 100px; right: 100px;}
-
-body {font-family: 'Source Sans Pro', sans-serif;}
+.page {
+    width: 1024px;
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 
 .hr3 {
     border: 0;
