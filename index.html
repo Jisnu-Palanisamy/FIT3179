@@ -1,216 +1,189 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-  
-    <style>
-    *{
-      font-family: 'Source Sans Pro', sans-serif;
-    }
-    p{
-      font-style: normal;
-    }
-    h1, h2{
-      font-weight: 900;
-      color: orange;
-    }
-     body{
-       background-color: #ffffa1;
-     }
-     .page{
-       width: 1000px;    
-       background-color: white;   
-       margin: auto;
-       padding: 20px;
-       padding-top: 35px;
-    }
-    .vis-container{
-      width: 100%;
-      padding-left: 50px;
-    }
-    .description h2, h1{
-      margin-top:0px;
-    }
-    .description-right {
-      padding-right: 50px;
-      padding-left: 10px;
-      font-style: normal;
-    }
-    .description-left{
-      padding-right: 10px;
-      padding-left: 50px;
-      font-style: normal;
-    }
-    .pure-g{
-      margin-bottom: 25px;
-    }
-    .small-font{
-        font-size: 14px;
-        font-style: normal;
-    }
-  </style>
-</head>
-<body>
+	<html>
+	
 
- <div class="page">
+	<head>
+	    <title>Data Visualisation 2</title>
+	    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+	    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+	
 
-   <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h1 style="text-align:center;">Obesity In The USA</h1>
-        <p style="text-align:center;">This page demonstrates the obesity rate in America, contributing factors to the obesity rate, and consequences of being overweight</p>
-      </div>
-    </div>
-  <!-- end pure grid group -->
+	    <!-- Import pure.css -->
+	    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
 
-    <!-- pure grid group -->
-   <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h2 style="text-align:center;">World Obesity Rate</h2>
-      </div>
-    </div>
-   
-    <div class="pure-g">
-        <div class="pure-u-1-4">
-          <div class="description description-left">
-            <p style="font-style: normal;">Obesity is one of the biggest problems to many countries in the world. The United States of America has been consistently one of top countries that have highest obesity rate over population </p>
-            <br><p style="text-align:center;"><b>650 million adults are obese (WHO, 2020)</p>
-          </div>
-        </div>
-      <div class="pure-u-3-4">
-          <div id="vis1"  class="vis-container"></div>
-        </div>
-    </div>
-    <!-- end pure grid group -->
+	    <!-- Google font -->
+	    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+	
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h2 style="text-align:center;">Fast-food Restaurants In The US</h2>
-      </div>
-    </div>
+	    <!-- CSS file -->
+	    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+	    
+	    <!-- custom style -->
+	    <style>
+	        * {font-family: 'Helvetica'; text-align: justify}
+	        h1 {font-size: 24px; width: 40%; padding: 15px; background-color: #f5f5f5;}
+	        body {background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
+	        .page {width: 950px; background-color: whitesmoke; margin: auto; padding: 50px; padding-top: 35px; font-family: 'Source Sans Pro', sans-serif;}
+	        .vis-container {width: 100%; text-align: center}
+	        .vis-container2 {width: 100%; text-align: center; left: 4%}
+	        .vline {border-left: 8px solid black; height: 125px; position: relative}
+	        .text1 {padding-left: 17px}
+	        .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 75%; letter-spacing: 0.1em;}
+	        .pure-g {margin-bottom: 25px;}
+	        .container {position: relative;}
+	        .center {position: absolute; top: 50%; width: 100%; text-align: center; font-size: 48px; font-family: 'Helvetica';}
+	        .img {width: 100%; height: auto;}
+	    </style>
+	
 
-    <div class="pure-g">
-        <div class="pure-u-3-4">
-          <div id="vis2" class="vis-container"></div>
-        </div>
-        <div class="pure-u-1-4">
-          <div class="description description-right">
-            <p style="font-style: normal;">The US has over 50.000 fast food chains (Njaramba, 2020). The Center for Disease Control and Prevention considers obesity is a major health issue resulting in numerous diseases in the US.</p>
-            <br><p style="text-align:center;"><b>13.797 MacDonald locations in the US (Scrapehero, 2017)</p>
-          </div>
-        </div> 
-      
-   </div>
-    <!-- end pure grid group -->
+	</head>
+	
 
-    <!-- pure grid group -->
-   <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h2 style="text-align:center;">Calories Per Serving?</h2>
-      </div>
-    </div>
-   
-    <div class="pure-g">
-      <div class="pure-u-1-4">
-        <div class="description description-left">
-          
-            <p style="font-style: normal;">An average adult should consume around 2000 – 2500 calories per day (NHS, 2019). However, if the body consumes too many calories without burning excess energy, the body will store the extra calories as fat. Fast foods are the rich sources of calories and fat.</p>
-            <br><p style="text-align:center;"><b>1.100 calories from a BigMac meal (Walsh, 2020)</p>
+	<body>
+	
 
-        </div>
-      </div>
-      <div class="pure-u-3-4">
-        <div id="vis3"  class="vis-container"></div>
-      </div>
-     
-    
-    </div>
-     <!-- pure grid group -->
-      <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h2 style="text-align:center;">Obesity Rate In The USA</h2>
-      </div>
-    </div>
-   
-    <div class="pure-g">
-        <div class="pure-u-3-4">
-          <div id="vis4"  class="vis-container"></div>
-        </div>
-        <div class="pure-u-1-4">
-          <div class="description description-right">
-            <p style="font-style: normal;">According to the Centers for Disease Control and Prevention (Fryar, Carroll, and Ogden, 2018), the obesity rate in the US has reached highest record in 2017 – 2018. The Centers for Disease Control and Prevention announced that all 50 states in America has over 20% obesity rate (CDC, 2020)</p>
-            <br><p style="text-align:center;"><b>42.4% obesity rate(Fryar, Carroll, and Ogden, 2018)</p>
-          </div>
-        </div>
-      
-    </div>
-    <!-- end pure grid group --> 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h2 style="text-align:center;">Consequences?</h2>
-      </div>
-    </div>
-   
-    <div class="pure-g">
-      <div class="pure-u-1-4">
-        <div class="description description-left">
+	    <div class="page">
+	        
+	         <!-- Header -->
+	            <div class = "container">
+	                <img src = "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/image1.png" width = "1000" height = "300" class="w3-opacity">
+	                    <div class = "center"><b><em>WORLDWIDE COVID-19 CASES IN 2020</div>
+	                </div>
+	        
+	        <!-- Introduction -->
+	        <br>
+	        <br>
+	        <div style = "position: relative; left: 6%" class = "vline">
+	            <div style = "position: relative; left: 2%" class = "text2">
+	                <p><b>What Is Covid-19?</b></p>
+	                <p><b>•</b>&nbsp;&nbsp;&nbsp;The coronavirus was first detected in Wuhan, China in Decemebr 2019.</p>
+	                <p><b>•</b>&nbsp;&nbsp;&nbsp;It is a RNA virus that causes diseases in mammals and birds.</p>
+	                <p><b>•</b>&nbsp;&nbsp;&nbsp;According to Sauer (2020), symptoms include fever, cough, fatigue, and breathing difficulties.</p>
+	            </div>
+	        </div>
+	        <br>
+	        <br>
+	        <hr style = "width: 25%">
+	        <br>
+	        <br>
+	        
+	            <!-- Choropleth Map -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1><b>How Does The World Look Like In 2020?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p>The <b>world map</b> shows the whole view of the Covid-19 outbreak.</p>
+	                        <br>
+	                        <br>
+	                        <div class = "pure-u-1-1">
+	                            <div id="vis1" class="vis-container"></div>
+	                            <p>Choose your preferred country to filter it out!</p>
+	                            <br>
+	                            <p><span class="bolded">United States of America</span> has the <strong>highest</strong> confirmed cases in 2020.</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	                
+	            <!-- Bubble Plot -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1>What Is The Relationship Between Cases, Deaths and Death Percentage?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p> The <strong>bubble plot</strong> below shows the relationship between cases, deaths and death percentage for each country.</p>
+	                        <div class="pure-u-1-1">
+	                            <div id="vis2" class="vis-container"></div>
+	                            <p>Check out the filtering options!</p>
+	                            <br>
+	                            <p><b>African countries</b> are clustedred more closely which means there are <b>lower cases and deaths</b> compared to other continents.</p> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	                
+	            <!-- Donut Chart -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1>How Much Each Continent Contributes To The Total Death Percentage?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p> The <strong>donut chart</strong> below shows the total death percentage for each continent.</p>
+	                        <div class="pure-u-1-1">
+	                            <div id="vis3" class="vis-container2"></div>
+	                            <p>Click on any part of the bar to highlight</p>
+	                            <br>
+	                            <p><b>Europe</b> has the <b>highest death percentage</b> and <b>Oceania</b> has the <b>lowest</b>.</p> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	                
+	            <!-- Vertical Bar Chart -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1>What Is The Sum of Total Cases and Deaths In Each Continent?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p> The <strong>bar charts</strong> below shows the total cases and deaths for each continent.</p>
+	                        <div class="pure-u-1-1">
+	                            <div id="vis4" class="vis-container1"></div>
+	                            <p>Click on any part of the bar in any graph to highlight</p>
+	                            <br>
+	                            <p><b>Europe</b> has the <b>highest total cases and deaths</b> and <b>Oceania</b> has the <b>lowest</b>.</p> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	
 
-            <p style="font-style: normal;">Obese people have a higher risk of having Coronary heart disease, type 2 diabetes, stroke. According to the data from the CDC, heart diseases and diabetes have been the leading factors of death in the US consistently. </p>
-            <br><p style="text-align:center;"><b>647.457 deaths by heart diseases in 2017 (Heron, 2019)</p>
-        </div>
-      </div>
-      <div class="pure-u-3-4">
-        <div id="vis5"  class="vis-container"></div>
-      </div>
-     
-    
-    </div>
-   <!-- end page -->
-   
-<script type="text/javascript">
-  
-  var vis1 = "choropleth_map.vg.json";
-  
-  vegaEmbed('#vis1', vis1).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-  var vis2 = "bubble_plot.vg.json";
-  
-  vegaEmbed('#vis2', vis2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-  var vis3 = "donut_chart.vg.json";
-  
-  vegaEmbed('#vis3', vis3).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-  var vis4 = "horizontal_bar_chart.vg.json";
-  
-  vegaEmbed('#vis4', vis4).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-  var vis5 = "area_chart.vg.json";
-  
-  vegaEmbed('#vis5', vis5).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-</script>
+	            <hr class="hr3">
+	
 
-</body>
+	            <div class="pure-g">
+	                <div class="pure-u-1-1 small-font">
+	                    <p>Created and Designed By: Jisnu Palanisamy (FIT3179 Semester 2 2022)
+	                </div>
+	            </div>
+	
 
-</html>
+	    </div>
+	
+
+	
+
+	    <script type="text/javascript">
+	        var specVis1 = "choropleth_map.vg.json";
+	        vegaEmbed('#vis1', specVis1);
+	
+
+	        var specVis2 = "bubble_plot.vg.json";
+	        vegaEmbed('#vis2', specVis2);
+	        
+	        var specVis3 = "donut_chart.vg.json";
+	        vegaEmbed('#vis3', specVis3);
+	
+
+	        var specVis4 = "vertical_bar_chart.vg.json";
+	        vegaEmbed('#vis4', specVis4);
+	
+
+	        print(brush)
+	    </script>
+	</body>
+	
+
+	</html>
