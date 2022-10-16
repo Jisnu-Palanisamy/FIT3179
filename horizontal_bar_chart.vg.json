@@ -1,95 +1,117 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"
-  },
-  "params": [
-    {"name": "highlight", "select": {"type": "point", "on": "mouseover"}},
-    {"name": "select", "select": "point"}
-  ],
+  "data": {"url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"},
   "hconcat": [
+  {
+  "width": 400,
+  "height": 600,
+  "transform": [
     {
-      "width": 825,
-      "height": 100,
-      "transform": [
-        {
-          "aggregate": [
-            {"op": "sum", "field": "TotalCases", "as": "Total Cases"}
-          ],
-          "groupby": ["Country"]
-        },
-        {
-          "window": [{"op": "rank", "as": "rank"}],
-          "sort": [{"field": "Total Cases", "order": "descending"}]
-        },
-        {"filter": "datum.rank <= 10", "as": "Country"}
-      ],
-      "mark": {"type": "bar", "stroke": "black", "cursor": "pointer"},
-      "title": "Top 10 Countries With The Highest Number of Total Cases",
-      "encoding": {
-        "x": {
-          "aggregate": "sum",
-          "field": "Total Cases",
-          "type": "quantitative",
-          "title": "Total Cases",
-          "axis": {"domain": false, "grid": false, "ticks": false}
-        },
-        "y": {
+      "aggregate": [{"op": "sum", "field": "TotalCases", "as": "Total Cases"}],
+      "groupby": ["Country"]
+    },
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "Total Cases", "order": "descending"}]
+    },
+    {
+      "filter": "datum.rank <= 10", "as": "Country"
+    }
+  ],
+  "encoding": {
+          "y": {
           "field": "Country",
           "type": "ordinal",
           "sort": {"op": "sum", "field": "Total Cases", "order": "descending"}
+          }
+  },
+  "layer": [{
+    "selection": {
+    "highlight": {"type": "single"}
+  },
+    "mark": {
+      "type": "bar",
+      "stroke": "black",
+      "cursor": "pointer"
+  }, 
+  "title": "Top 10 Countries With Highest Number Of Total Cases",
+    "encoding": {
+      "x": {
+          "aggregate": "sum",
+          "field": "Total Cases",
+          "type": "quantitative",
+          "axis": null
         },
-        "fillOpacity": {
-          "condition": {"param": "select", "value": 1},
-          "value": 0.3
-        },
-        "tooltip": [
-          {"field": "Country", "type": "ordinal"},
-          {"field": "Total Cases", "type": "quantitative", "format": ","}
-        ]
-      }
+      "tooltip": [{"field": "Country", "type": "nominal"},
+      {"field": "Total Cases", "type": "quantitative", "format": ","}],
+      "fillOpacity": {
+      "condition": {"selection": "highlight", "value": 1},
+      "value": 0.5
+    },
+    }
+  }, {
+    "mark": {"type": "text", "align": "left", "x": 5, "color": "whitesmoke"},
+    "encoding": {
+      "text": {"field": "Total Cases", "type": "quantitative", "format": ","}
+    }
+  }]
+},
+{
+  "width": 400,
+  "height": 600,
+  "transform": [
+    {
+      "aggregate": [{"op": "sum", "field": "TotalDeaths", "as": "Total Deaths"}],
+      "groupby": ["Country"]
     },
     {
-      "width": 300,
-      "height": 500,
-      "transform": [
-        {
-          "aggregate": [
-            {"op": "sum", "field": "TotalDeaths", "as": "Total Deaths"}
-          ],
-          "groupby": ["Country"]
-        },
-        {
-          "window": [{"op": "rank", "as": "rank"}],
-          "sort": [{"field": "Total Deaths", "order": "descending"}]
-        },
-        {"filter": "datum.rank <= 10", "as": "Country"}
-      ],
-      "mark": {"type": "bar", "stroke": "black", "cursor": "pointer"},
-      "title": "Top 10 Countries With The Highest Number of Total Deaths",
-      "encoding": {
-        "x": {
-          "aggregate": "sum",
-          "field": "Total Deaths",
-          "type": "quantitative",
-          "title": "Total Deaths",
-          "axis": {"domain": false, "grid": false, "ticks": false}
-        },
-        "y": {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "Total Deaths", "order": "descending"}]
+    },
+    {
+      "filter": "datum.rank <= 10", "as": "Country"
+    }
+  ],
+  "encoding": {
+          "y": {
           "field": "Country",
           "type": "ordinal",
           "sort": {"op": "sum", "field": "Total Deaths", "order": "descending"}
-        },
-        "fillOpacity": {
-          "condition": {"param": "select", "value": 1},
-          "value": 0.3
-        },
-        "tooltip": [
-          {"field": "Country", "type": "nominal"},
-          {"field": "Total Deaths", "type": "quantitative", "format": ","}
-        ]
-      }
+          }
+  },
+  "layer": [{
+    "selection": {
+    "highlight": {"type": "single"}
+  },
+    "mark": {
+      "type": "bar",
+      "stroke": "black",
+      "cursor": "pointer"
+  },
+  "title": "Top 10 Countries With Highest Number Of Total Deaths",
+    "encoding": {
+      "x": {
+          "aggregate": "sum",
+          "field": "Total Deaths",
+          "type": "quantitative",
+          "axis": null
+        }, 
+      "tooltip": [{"field": "Country", "type": "nominal"},
+      {"field": "Total Deaths", "type": "quantitative", "format": ","}],
+      "fillOpacity": {
+      "condition": {"selection": "highlight", "value": 1},
+      "value": 0.5
+    },
     }
-  ],
-  "config": {}
+  }, {
+    "mark": {"type": "text", "align": "left", "x": 5, "color": "whitesmoke"},
+    "encoding": {
+      "text": {"field": "Total Deaths", "type": "quantitative", "format": ","}
+    }
+  }]
 }
+  ],
+    "config"     : {"axis"  : {"labelFont": "Sans-Serif", "titleFont": "Sans-Serif"},
+                  "title" : {"font": "Sans-Serif", "fontSize": 24, "fontWeight": "bold", "fontStyle": "italic"},
+                  "text"  : {"align": "left", "fontWeight": "bold", "font": "Sans-Serif", "color": "black"}}
+  }
