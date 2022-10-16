@@ -34,5 +34,6 @@
     {"field": "PercentOfTotal", "aggregate": "sum", "title": "Total Death Percentage", "format": ".2f"}]
 },
     "config": {"title" : {"font": "Sans-Serif", "fontSize": 24, "fontWeight": "bold", "fontStyle": "italic"},
+               "style" : {"cell": {"stroke": "transparent"}},
                "text"  : {"fontWeight": "bold", "font": "Sans-Serif"}}
 }
