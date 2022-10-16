@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "background": "whitesmoke",
   "width": 650,
   "height": 500,
   "title": "The Relationship Between Cases, Deaths and Death Percentage",
