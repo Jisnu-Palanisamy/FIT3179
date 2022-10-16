@@ -175,23 +175,27 @@
     </div>
 
     <script type="text/javascript">
-        var specVis1 = "choropleth_map.vg.json";
-        vegaEmbed('#vis1', specVis1);
+        var vis = ["choropleth_map.vg.json",
+		   "bubble_plot.vg.json",
+		   "horizontal_bar_chart.vg.json",
+		   "donut_chart.vg.json",
+		   "area_chart.vg.json"]
 	
-	var specVis2 = "bubble_plot.vg.json";
-	vegaEmbed('#vis2', specVis2);
-	        
-	var specVis3 = "horizontal_bar_chart.vg.json";
-	vegaEmbed('#vis3', specVis3);
+    vegaEmbed('vis1', vis[0], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    
+    vegaEmbed('#vis2', vis[1], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis3', vis[2], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis4', vis[3], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis5', vis[4], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
 
-	var specVis4 = "donut_chart.vg.json";
-	vegaEmbed('#vis4', specVis4);
-		   
-	var specVis5 = "area_chart.vg.json";
-	vegaEmbed('#vis5', specVis5);
-	
-
-	print(brush)
     </script>
 </body>
 	
