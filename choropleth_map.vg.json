@@ -65,7 +65,7 @@
             },
             {
               "calculate": "datum.TotalCasesPer1MPop",
-              "as": "Confirmed Cases Per 1 Million Population"
+              "as": "Cases Per 1 Million Population"
             },
             {"filter": "datum.Population > Cases_Above"}
           ],
@@ -78,7 +78,7 @@
           ],
           "encoding": {
             "color": {
-              "field": "Confirmed Cases Per 1 Million Population",
+              "field": "Cases Per 1 Million Population",
               "type": "quantitative",
               "scale": {
                 "type": "log",
@@ -98,7 +98,7 @@
                 "title": "Total Cases"
               },
               {
-                "field": "Confirmed Cases Per 1 Million Population",
+                "field": "Cases Per 1 Million Population",
                 "type": "quantitative",
                 "format": ","
               },
@@ -150,7 +150,7 @@
         },
         {
           "calculate": "datum.TotalCasesPer1MPop",
-          "as": "Confirmed Cases Per 1 Million Population"
+          "as": "Cases Per 1 Million Population"
         },
         {"filter": {"param": "countrySelection", "empty": false}}
       ],
@@ -158,14 +158,14 @@
       "mark": {"type": "bar", "cornerRadius": {"expr": "cornerRadius"}},
       "encoding": {
         "x": {
-          "field": "Confirmed Cases Per 1 Million Population",
+          "field": "Cases Per 1 Million Population",
           "type": "quantitative"
         },
         "y": {"field": "properties.NAME", "type": "nominal", "title": null},
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
           {
-            "field": "Confirmed Cases Per 1 Million Population",
+            "field": "Cases Per 1 Million Population",
             "type": "quantitative",
             "format": ","
           }
