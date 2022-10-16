@@ -5,7 +5,7 @@
   },
   "hconcat": [
     {
-      "width": 400,
+      "width": "container",
       "height": 600,
       "transform": [
         {
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "width": 400,
+      "width": "container",
       "height": 600,
       "transform": [
         {
