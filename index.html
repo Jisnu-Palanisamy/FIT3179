@@ -61,19 +61,16 @@
         </div>
         <br>
         <br>
-        <br>
         <hr style = "width: 25%">
         <br>
         <br>
-        <br>
 
-        <!-- pure grid group -->
+        <!-- Chropleth Map -->
         <div class="pure-g">
             <div class="pure-u-1-1">
 		<h2>What Does The World Looks Like In 2020?</h2>
 		<div class = "text1">
 		    <p>The world map shows the virus outbreak in all the countries.</p>
-		    <br>
 		    <br>
 	            <div class = "pure-u-1-1">
                 	<div id="vis1" class="vis-container"></div>
@@ -85,45 +82,49 @@
             </div>
         </div>
         <!-- end pure grid group -->
-        <br>
 
-            <hr class="hr3">
+        <hr class="hr3">
 
-            <h2>Example 2: Interactive multiple views</h2>
-            <!-- pure grid group -->
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <div id="vis2" class="vis-container"></div>
-                </div>
+        <!-- Bubble Plot -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+		<h2>Let's Explore Each Countries</h2>
+		<div class = "text1">
+		    <p>We can see the relationship between cases, deaths and death percentage for every country.</p>
+		    <br>
+	            <div class = "pure-u-1-1">
+                	<div id="vis2" class="vis-container"></div>
+			<p>Some tools to play with:<br>- Zoom in to enlarge smaller dots<br>- Drag around<br>- Click on the legend entries for any continent</p>
+			<br>
+			<p><b><span style = "color: orange">African countries</span></b> are clustered more closely and have <b>lower recoveries and deaths</b> compared to other continents.</p>
+		    </div>
+		</div>
             </div>
-            <!-- end pure grid group -->
-            <br>
+        </div>
+        <!-- end pure grid group -->
+		
+	<hr class="hr3">
 
-            <hr class="hr3">
 
-
-            <h2>Example 3: Zoomable Choropleth map with a time slider</h2>
-            <!-- pure grid group -->
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <div id="vis3" class="vis-container"></div>
-                </div>
+        <!-- Horizontal Bar Chart -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+		<h2>Top 10 Countries</h2>
+		<div class = "text1">
+		    <p>Dicover the top 10 countries in terms of total cases and deaths.</p>
+		    <br>
+	            <div class = "pure-u-1-1">
+                	<div id="vis3" class="vis-container"></div>
+			<p>Click on your preferred country!</p>
+			<br>
+			<p>As expected, <b><span style = "color: blue">United States of America</span></b> has the <b>most number of total cases and total deaths</b> in the world.</p>
+		    </div>
+		</div>
             </div>
-            <!-- end pure grid group -->
-            <br>
+        </div>
+        <!-- end pure grid group -->
 
-            <hr class="hr3">
-
-            <h2>Example 4: Choropleth map in small multiples</h2>
-            <!-- pure grid group -->
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <div id="vis4" class="vis-container"></div>
-                </div>
-            </div>
-            <!-- end pure grid group -->
-
-            <hr class="hr3">
+        <hr class="hr3">
 
             <div class="pure-g">
                 <div class="pure-u-1-1 small-font">
@@ -138,10 +139,10 @@
         var specVis1 = "choropleth_map.vg.json";
         vegaEmbed('#vis1', specVis1);
 
-        var specVis2 = "2_interactive.vg.json";
+        var specVis2 = "bubble_plot.vg.json";
         vegaEmbed('#vis2', specVis2);
 
-        var specVis3 = "3_properties.vg.json";
+        var specVis3 = "horizontal_bar_chart.vg.json";
         vegaEmbed('#vis3', specVis3);
 
         var specVis4 = "4_small_multiples.vg.json";
