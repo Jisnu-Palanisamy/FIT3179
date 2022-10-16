@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "background": "whitesmoke",
   "title": {
     "text": "What Does The Distribution of Cases and Deaths Looks Like?",
     "anchor": "middle"
