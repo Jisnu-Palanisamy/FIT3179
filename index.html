@@ -1,175 +1,189 @@
 <!DOCTYPE html>
-<html>
+	<html>
+	
 
-<head>
-    <title>Data Visualisation 2</title>
-    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+	<head>
+	    <title>Data Visualisation 2</title>
+	    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+	    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+	
 
-    <!-- Import pure.css -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- Import pure.css -->
+	    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+	    <!-- Google font -->
+	    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+	
 
-    <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-    
-    <!-- custom style -->
-    <style>
-        * {font-family: 'Source Sans Pro', sans-serif; text-align: justify}
-        h1 {font-size: 48px; font-weight: bold; text-align: center; padding: 50px; background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
-        h2 {font-size: 24px; font-weight: bold; width: 50%; padding: 15px; background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
-        body {background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
-        .page {width: 950px; background-color: whitesmoke; margin: auto; padding: 50px; padding-top: 35px;}
-        .vline {border-left: 8px solid black; height: 125px; position: relative}
-        .vis-container {width: 100%; text-align: center}
-        .vis-container2 {width: 100%; text-align: center; left: 4%}
-        .text1 {padding-left: 16px}
-        .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 75%; letter-spacing: 0.1em;}
-        .pure-g {margin-bottom: 25px;}
-        .container {position: relative;}
-        .img_class_1 {width: 100%; height: auto;}
-    </style>
+	    <!-- CSS file -->
+	    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+	    
+	    <!-- custom style -->
+	    <style>
+	        * {font-family: 'Helvetica'; text-align: justify}
+	        h1 {font-size: 24px; width: 40%; padding: 15px; background-color: #f5f5f5;}
+	        body {background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
+	        .page {width: 950px; background-color: whitesmoke; margin: auto; padding: 50px; padding-top: 35px; font-family: 'Source Sans Pro', sans-serif;}
+	        .vis-container {width: 100%; text-align: center}
+	        .vis-container2 {width: 100%; text-align: center; left: 4%}
+	        .vline {border-left: 8px solid black; height: 125px; position: relative}
+	        .text1 {padding-left: 17px}
+	        .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 75%; letter-spacing: 0.1em;}
+	        .pure-g {margin-bottom: 25px;}
+	        .container {position: relative;}
+	        .center {position: absolute; top: 50%; width: 100%; text-align: center; font-size: 48px; font-family: 'Helvetica';}
+	        .img {width: 100%; height: auto;}
+	    </style>
+	
 
-</head>
+	</head>
+	
 
-<body>
+	<body>
+	
 
-    <div class="page">
-        
-        <!-- Header -->
-        <div class = "pure-g">
-            <div class = "pure-u-1-1">
-                <div class = "img_class_1">
-                    <img src = "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/image1.png" width = "950" height = "300">
-                </div>
-                <h1><b><em>WORLDWIDE COVID-19 CASES IN 2020</h1>
-            </div>
-        </div>
-                
-        <!-- Introduction -->
-        <div style = "position: relative; left: 6%" class = "vline">
-            <div style = "position: relative; left: 2%" class = "text2">
-                <p><b>What Is Covid-19?</b></p>
-                <p><b>•</b>&nbsp;&nbsp;&nbsp;The coronavirus was first detected in Wuhan, China in Decemebr 2019.</p>
-                <p><b>•</b>&nbsp;&nbsp;&nbsp;It is a RNA virus that causes diseases in mammals and birds.</p>
-                <p><b>•</b>&nbsp;&nbsp;&nbsp;According to Sauer (2020), symptoms include fever, cough, fatigue, and breathing difficulties.</p>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <hr style = "width: 25%">
-        <br>
-        <br>
-        <br>
+	    <div class="page">
+	        
+	         <!-- Header -->
+	            <div class = "container">
+	                <img src = "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/image1.png" width = "1000" height = "300" class="w3-opacity">
+	                    <div class = "center"><b><em>WORLDWIDE COVID-19 CASES IN 2020</div>
+	                </div>
+	        
+	        <!-- Introduction -->
+	        <br>
+	        <br>
+	        <div style = "position: relative; left: 6%" class = "vline">
+	            <div style = "position: relative; left: 2%" class = "text2">
+	                <p><b>What Is Covid-19?</b></p>
+	                <p><b>•</b>&nbsp;&nbsp;&nbsp;The coronavirus was first detected in Wuhan, China in Decemebr 2019.</p>
+	                <p><b>•</b>&nbsp;&nbsp;&nbsp;It is a RNA virus that causes diseases in mammals and birds.</p>
+	                <p><b>•</b>&nbsp;&nbsp;&nbsp;According to Sauer (2020), symptoms include fever, cough, fatigue, and breathing difficulties.</p>
+	            </div>
+	        </div>
+	        <br>
+	        <br>
+	        <hr style = "width: 25%">
+	        <br>
+	        <br>
+	        
+	            <!-- Choropleth Map -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1><b>How Does The World Look Like In 2020?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p>The <b>world map</b> shows the whole view of the Covid-19 outbreak.</p>
+	                        <br>
+	                        <br>
+	                        <div class = "pure-u-1-1">
+	                            <div id="vis1" class="vis-container"></div>
+	                            <p>Choose your preferred country to filter it out!</p>
+	                            <br>
+	                            <p><span class="bolded">United States of America</span> has the <strong>highest</strong> confirmed cases in 2020.</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	                
+	            <!-- Bubble Plot -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1>What Is The Relationship Between Cases, Deaths and Death Percentage?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p> The <strong>bubble plot</strong> below shows the relationship between cases, deaths and death percentage for each country.</p>
+	                        <div class="pure-u-1-1">
+	                            <div id="vis2" class="vis-container"></div>
+	                            <p>Check out the filtering options!</p>
+	                            <br>
+	                            <p><b>African countries</b> are clustedred more closely which means there are <b>lower cases and deaths</b> compared to other continents.</p> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	                
+	            <!-- Donut Chart -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1>How Much Each Continent Contributes To The Total Death Percentage?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p> The <strong>donut chart</strong> below shows the total death percentage for each continent.</p>
+	                        <div class="pure-u-1-1">
+	                            <div id="vis3" class="vis-container2"></div>
+	                            <p>Click on any part of the bar to highlight</p>
+	                            <br>
+	                            <p><b>Europe</b> has the <b>highest death percentage</b> and <b>Oceania</b> has the <b>lowest</b>.</p> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	                
+	            <!-- Vertical Bar Chart -->
+	            <div class="pure-g">
+	                <div class="pure-u-1-1">
+	                    <h1>What Is The Sum of Total Cases and Deaths In Each Continent?</h1>
+	                    <br>
+	                    <div class = "text1">
+	                        <p> The <strong>bar charts</strong> below shows the total cases and deaths for each continent.</p>
+	                        <div class="pure-u-1-1">
+	                            <div id="vis4" class="vis-container1"></div>
+	                            <p>Click on any part of the bar in any graph to highlight</p>
+	                            <br>
+	                            <p><b>Europe</b> has the <b>highest total cases and deaths</b> and <b>Oceania</b> has the <b>lowest</b>.</p> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- end pure grid group -->
+	            <br>
+	
 
-        <!-- Choropleth Map -->
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-                <h1><b>What Does The World Look Like In 2020?</h1>
-                    <p>The <b>world map</b> shows the whole view of the Covid-19 outbreak in all the countries.<p>
-                    <div class="pure-u-1-1">
-                        <div id="vis1" class='vis-container'</div>
-                        <p>Choose your preferred country to filter it out!</p>
-                        <p><b><span style = "color: red">United States of America</span></b> has the <b>highest</b> confirmed cases in 2020.</p>
-                </div>
-            </div>
-        </div>
-        <!-- end pure grid group -->
-        <br>
+	            <hr class="hr3">
+	
 
-            <hr class="hr3">
-                
-            <!-- Bubble Plot -->
-            <h2>Let's Discover Each Countries One By One</h2>
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <p> The <b>bubble plot</b> below shows the relationship between cases, deaths and death percentage for each country.</p>
-                    <div id="vis2" class="container"></div>
-                    <p>Check out the filtering options! (In the legend too)</p>
-                    <p><b><span style = "color: orange">African countries</span></b> are clustedred more closely which means there are <b>lower cases and deaths</b> compared to other continents.</p> 
-                </div>
-            </div>
-            <!-- end pure grid group -->
-            <br>
+	            <div class="pure-g">
+	                <div class="pure-u-1-1 small-font">
+	                    <p>Created and Designed By: Jisnu Palanisamy (FIT3179 Semester 2 2022)
+	                </div>
+	            </div>
+	
 
-            <hr class="hr3">
+	    </div>
+	
 
-            <!-- Horizontal Bar Chart -->
-            <h2>Top 10</h2>
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <p>Let's discover the <b>top 10 countries</b> for total cases and deaths.</p>
-                    <div id="vis3" class="container"></div>
-                    <p>Click on any of the bars to highlight</p>
-                    <p>Again as expected <b>United States of America</b> has the <b>highest amount of cases and deaths</b>.</p> 
-                </div>
-            </div>
-            <!-- end pure grid group -->
-            <br>
+	
 
-            <hr class="hr3">
-            
-            <!-- Donut Chart -->
-            <h2>Death Percentage of Each Continents</h2>
-            <div class="pure-g">
-                <div class="pure-u-2-3">
-                    <p>The <b>death percentage</b> for each continent is shown below.</p>
-                    <div id="vis4" class="vis-container2"></div>
-                    <p>Click on any of the bars to highlight</p>
-                    <p><b><span style = "color: red">Europe continent</span></b> has the <b>highest amount of death percentage</b>.</p> 
-                </div>
-            </div>
-            <!-- end pure grid group -->
-            <br>
+	    <script type="text/javascript">
+	        var specVis1 = "choropleth_map.vg.json";
+	        vegaEmbed('#vis1', specVis1);
+	
 
-            <hr class="hr3">
+	        var specVis2 = "bubble_plot.vg.json";
+	        vegaEmbed('#vis2', specVis2);
+	        
+	        var specVis3 = "donut_chart.vg.json";
+	        vegaEmbed('#vis3', specVis3);
+	
 
-            <!-- Area Chart -->
-            <h2>So What Can We Conclude?</h2>
-            <div class="pure-g">
-                <div class="pure-u-1-1">
-                    <p> We can discover the <b>density dustribution</b> for total cases and deaths per 1 million population.</p>
-                    <div id="vis5" class="vis-container"></div>
-                    <p>Hover over any part of the graph and there will be a line following your cursor</p>
-                </div>
-            </div>
-            <!-- end pure grid group -->
+	        var specVis4 = "vertical_bar_chart.vg.json";
+	        vegaEmbed('#vis4', specVis4);
+	
 
-            <hr class="hr3">
+	        print(brush)
+	    </script>
+	</body>
+	
 
-            <div class="pure-g">
-                <div class="pure-u-1-1 small-font">
-                    <p>Created and Designed By <b>Jisnu Palanisamy</b>
-                </div>
-            </div>
-
-    </div>
-
-
-    <script type="text/javascript">
-        var specVis1 = "choropleth_map.vg.json";
-        vegaEmbed('#vis1', specVis1);
-
-        var specVis2 = "bubble_plot.vg.json";
-        vegaEmbed('#vis2', specVis2);
-
-        var specVis3 = "horizontal_bar_chart.vg.json";
-        vegaEmbed('#vis3', specVis3);
-
-        var specVis4 = "donut_chart.vg.json";
-        vegaEmbed('#vis4', specVis4);
-        
-        var specVis5 = "area_chart.vg.json";
-        vegaEmbed('#vis5', specVis5);
-
-        print(brush)
-    </script>
-</body>
-
-</html>
+	</html>
