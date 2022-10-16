@@ -24,7 +24,7 @@
         h1 {font-size: 48px; font-weight: bold; text-align: center; padding: 50px; background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
         h2 {font-size: 24px; font-weight: bold; width: 70%; padding: 15px; background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
         body {background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
-        .page {width: 950px; background-color: white; margin: auto; padding: 50px; padding-top: 35px; font-family: 'Source Sans Pro', sans-serif;}
+        .page {width: 950px; background-color: whitesmoke; margin: auto; padding: 50px; padding-top: 35px; font-family: 'Source Sans Pro', sans-serif;}
         .vline {border-left: 8px solid black; height: 125px; position: relative}
         .vis-container {width: 100%;}
         .text1 {padding-left: 16px}
@@ -178,19 +178,31 @@
 
     <script type="text/javascript">
         var specVis1 = "choropleth_map.vg.json";
-        vegaEmbed('#vis1', specVis1);
-
         var specVis2 = "bubble_plot.vg.json";
-        vegaEmbed('#vis2', specVis2);
-
         var specVis3 = "horizontal_bar_chart.vg.json";
-        vegaEmbed('#vis3', specVis3);
-
-        var specVis4 = "donut_chart.vg.json";
-        vegaEmbed('#vis4', specVis4);
-	    
+        var specVis4 = "donut_chart.vg.json";   
 	var specVis5 = "area_chart.vg.json";
-        vegaEmbed('#vis5', specVis5);
+
+	    
+	vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    	}).catch(console.error);
+
+    	vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    	}).catch(console.error);
+
+    	vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   	}).catch(console.error);
+
+    	vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    	}).catch(console.error);
+
+    	vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    	}).catch(console.error);
 
         print(brush)
     </script>
