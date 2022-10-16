@@ -1,19 +1,11 @@
-.vis-container {
-    width: 100%;
-}
+#choropleth_map {left: 100px; right: 100px;}
 
-.page {
-    width: 1024px;
-    background-color: white;
-    margin: auto;
-    padding: 50px;
-    padding-top: 10px;
-    font-family: 'Source Sans Pro', sans-serif;
-}
+#bubble_plot {left: 100px; right: 100px;}
 
-.hr3 {
-    border: 0;
-    height: 2px;
-    background-image: linear-gradient(to right, transparent, #DDD, transparent);
-    padding-top: 5px;
-}
+#isotype_chart {left: 100px; right: 100px;}
+
+#distribution_area_graph {left: 100px; right: 100px;}
+
+#hybrid_line_graph {left: 100px; right: 100px;}
+
+body {font-family: 'Source Sans Pro', sans-serif;}
