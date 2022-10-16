@@ -22,7 +22,7 @@
   ],
   "vconcat": [
     {
-      "width": 550,
+      "width": 600,
       "height": 500,
       "title": "Worldwide COVID-19 Confirmed Cases 2020",
       "projection": {"type": "equalEarth"},
