@@ -25,7 +25,8 @@
 	    <!-- custom style -->
 	    <style>
 	        * {font-family: 'Helvetica'; text-align: justify}
-	        h1 {font-size: 24px; width: 40%; padding: 15px; background-color: #f5f5f5;}
+	        h1 {font-size: 48px; width: 100%; padding: 15px; background-color: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
+		h2 {font-size: 24px; font-weight: bold; width: 40%; padding: 15px; background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
 	        body {background: linear-gradient(90deg, rgba(255, 99, 71, 0.2) 0%, rgba(255, 99, 71, 0.6) 50%, rgba(255, 99, 71, 1) 100%);}
 	        .page {width: 950px; background-color: whitesmoke; margin: auto; padding: 50px; padding-top: 35px; font-family: 'Source Sans Pro', sans-serif;}
 	        .vis-container {width: 100%; text-align: center}
@@ -47,16 +48,18 @@
 	
 
 	    <div class="page">
-	        
-	         <!-- Header -->
-	            <div class = "container">
-	                <img src = "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/image1.png" width = "1000" height = "300" class="w3-opacity">
-	                    <div class = "center"><b><em>WORLDWIDE COVID-19 CASES IN 2020</div>
-	                </div>
+		    
+		<!-- Header -->
+        	<div class = "pure-g">
+            		<div class = "pure-u-1-1">
+                		<div class = "img_class_1">
+                    		<img src = "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/image1.png" style = "float:left; width: 100px; height: 100px;">
+                		</div>
+                		<h1><b><em>WORLDWIDE COVID-19 CASES IN 2020</h1>
+            		</div>
+        	</div>
 	        
 	        <!-- Introduction -->
-	        <br>
-	        <br>
 	        <div style = "position: relative; left: 6%" class = "vline">
 	            <div style = "position: relative; left: 2%" class = "text2">
 	                <p><b>What Is Covid-19?</b></p>
@@ -76,17 +79,14 @@
 	                <div class="pure-u-1-1">
 	                    <h1><b>How Does The World Look Like In 2020?</h1>
 	                    <br>
-	                    <div class = "text1">
-	                        <p>The <b>world map</b> shows the whole view of the Covid-19 outbreak.</p>
-	                        <br>
-	                        <br>
-	                        <div class = "pure-u-1-1">
+	                    <p>The <b>world map</b> shows the whole view of the Covid-19 outbreak.</p>
+	                    <br>
+	                    <div class = "pure-u-1-1">
 	                            <div id="vis1" class="vis-container"></div>
 	                            <p>Choose your preferred country to filter it out!</p>
 	                            <br>
-	                            <p><span class="bolded">United States of America</span> has the <strong>highest</strong> confirmed cases in 2020.</p>
-	                        </div>
-	                    </div>
+				    <p><b>United States of America</b> has the <b>highest</b> number of cases.</p> 
+			    </div>
 	                </div>
 	            </div>
 	            <!-- end pure grid group -->
