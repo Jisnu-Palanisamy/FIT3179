@@ -5,7 +5,7 @@
   },
   "hconcat": [
     {
-      "width": 400,
+      "width": 350,
       "height": 600,
       "transform": [
         {
@@ -31,7 +31,7 @@
         {
           "selection": {"highlight": {"type": "single"}},
           "mark": {"type": "bar", "stroke": "black", "cursor": "pointer"},
-          "title": "Top 10 Countries With Highest Number Of Total Cases",
+          "title": "Top 10 Countries (Total Cases)",
           "encoding": {
             "x": {
               "aggregate": "sum",
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "width": 400,
+      "width": 350,
       "height": 600,
       "transform": [
         {
@@ -93,7 +93,7 @@
         {
           "selection": {"highlight": {"type": "single"}},
           "mark": {"type": "bar", "stroke": "black", "cursor": "pointer"},
-          "title": "Top 10 Countries With Highest Number Of Total Deaths",
+          "title": "Top 10 Countries (Total Deaths)",
           "encoding": {
             "x": {
               "aggregate": "sum",
@@ -135,7 +135,8 @@
       "font": "Sans-Serif",
       "fontSize": 24,
       "fontWeight": "bold",
-      "fontStyle": "italic"
+      "fontStyle": "italic",
+      "forntSize": 10
     },
     "text": {
       "align": "left",
