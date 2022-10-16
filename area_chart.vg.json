@@ -9,8 +9,8 @@
   },
   "vconcat": [
     {
-      "width": 1000,
-      "height": 275,
+      "width": 900,
+      "height": 300,
       "transform": [
         {"density": "TotalCasesPer1MPop", "bandwidth": 1, "extent": [0, 20]}
       ],
@@ -78,8 +78,8 @@
       ]
     },
     {
-      "width": 1000,
-      "height": 275,
+      "width": 900,
+      "height": 300,
       "transform": [
         {"density": "TotalDeathsPer1MPop", "bandwidth": 1, "extent": [0, 20]}
       ],
