@@ -102,10 +102,25 @@
             <h2>Top 10</h2>
             <div class="pure-g">
                 <div class="pure-u-1-1">
-                    <p> Let's discover the <b>top 10 countries</b> for total cases and deaths.</p>
+                    <p>Let's discover the <b>top 10 countries</b> for total cases and deaths.</p>
                     <div id="vis3" class="container"></div>
                     <p>Click on any of the bars to highlight</p>
                     <p>Again as expected <b>United States of America</b> has the <b>highest amount of cases and deaths</b>.</p> 
+                </div>
+            </div>
+            <!-- end pure grid group -->
+            <br>
+
+            <hr class="hr3">
+            
+            <!-- Donut Chart -->
+            <h2>Death Percentage of Each Continents</h2>
+            <div class="pure-g">
+                <div class="pure-u-2-3">
+                    <p>The <b>death percentage</b> for each continent is shown below.</p>
+                    <div id="vis4" class="vis-container2"></div>
+                    <p>Click on any of the bars to highlight</p>
+                    <p><b><span style = "color: red">Europe continent</span></b> has the <b>highest amount of death percentage</b>.</p> 
                 </div>
             </div>
             <!-- end pure grid group -->
@@ -118,7 +133,7 @@
             <div class="pure-g">
                 <div class="pure-u-1-1">
                     <p> We can discover the <b>density dustribution</b> for total cases and deaths per 1 million population.</p>
-                    <div id="vis4" class="container"></div>
+                    <div id="vis5" class="vis-container"></div>
                     <p>Hover over any part of the graph and there will be a line following your cursor</p>
                 </div>
             </div>
@@ -128,7 +143,7 @@
 
             <div class="pure-g">
                 <div class="pure-u-1-1 small-font">
-                    <p>&copy; 2022 <a href="https://fit3179.github.io/Vega-Lite/" target="_blank">FIT3179 Teaching Team</a>. Copyright reserved. <b>Those examples are for educational purpose only.
+                    <p>Created and Designed By <b>Jisnu Palanisamy</b>
                 </div>
             </div>
 
@@ -145,8 +160,11 @@
         var specVis3 = "horizontal_bar_chart.vg.json";
         vegaEmbed('#vis3', specVis3);
 
-        var specVis4 = "area_chart.vg.json";
+        var specVis4 = "donut_chart.vg.json";
         vegaEmbed('#vis4', specVis4);
+        
+        var specVis5 = "area_chart.vg.json";
+        vegaEmbed('#vis5', specVis5);
 
         print(brush)
     </script>
