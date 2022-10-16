@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
+  "width": 750,
   "height": 500,
   "title": "How Much Each Continent Contributes To The Death Percentage",
   "data": {
