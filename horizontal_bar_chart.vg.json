@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "whitesmoke",
   "data": {
     "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"
   },
@@ -53,8 +54,7 @@
           "mark": {
             "type": "text",
             "align": "left",
-            "x": 5,
-            "color": "whitesmoke"
+            "x": 1
           },
           "encoding": {
             "text": {
@@ -115,8 +115,7 @@
           "mark": {
             "type": "text",
             "align": "left",
-            "x": 5,
-            "color": "whitesmoke"
+            "x": 5
           },
           "encoding": {
             "text": {
