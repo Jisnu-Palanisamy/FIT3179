@@ -115,7 +115,7 @@
           "mark": {
             "type": "text",
             "align": "left",
-            "x": 5
+            "x": 1
           },
           "encoding": {
             "text": {
@@ -134,14 +134,14 @@
       "font": "Sans-Serif",
       "fontSize": 24,
       "fontWeight": "bold",
-      "fontStyle": "italic",
-      "forntSize": 7
+      "fontStyle": "italic"
     },
     "text": {
       "align": "left",
       "fontWeight": "bold",
       "font": "Sans-Serif",
-      "color": "black"
+      "color": "black",
+      "fontSize": 7
     }
   }
 }
