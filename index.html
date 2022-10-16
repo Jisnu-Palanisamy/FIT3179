@@ -29,7 +29,7 @@
         .vis-container {width: 100%; text-align: center}
         .vis-container2 {width: 100%; text-align: center; left: 4%}
         .text1 {padding-left: 16px}
-        .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 75%; letter-spacing: 0.1em;}
+        .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 24px; letter-spacing: 0.1em;}
         .pure-g {margin-bottom: 25px;}
         .img_class_1 {width: 100%; height: auto;}
     </style>
@@ -68,13 +68,13 @@
         <br>
 
         <!-- Choropleth Map -->
-        <h2>What Does The World Look Like In 2020?</h2>
+        <h2><b>What Does The World Look Like In 2020?</h2>
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <p>The <b>world map</b> shows the whole view of the Covid-19 outbreak in all the countries<p>
                 <div id="vis1" class="vis-container"></div>
                 <p>Choose your preferred country to filter it out!</p>
-                <p><b>United States of America</b> has the <b>highest</b> confirmed cases in 2020.</p>
+                <p><b><span style = "color: red">United States of America</span></b> has the <b>highest</b> confirmed cases in 2020.</p>
             </div>
         </div>
         <!-- end pure grid group -->
@@ -82,11 +82,14 @@
 
             <hr class="hr3">
                 
-            <!-- Choropleth Map -->
-            <h2>Example 2: Interactive multiple views</h2>
+            <!-- Bubble Plot -->
+            <h2>Let's Discover Each Countries One By One</h2>
             <div class="pure-g">
                 <div class="pure-u-1-1">
+                    <p> The <b>bubble plot</b> below shows the relationship between cases, deaths and death percentage for each country.</p>
                     <div id="vis2" class="vis-container"></div>
+                    <p>Check out the filtering options! (In the legend too)</p>
+                    <p><b><span style = "color: orange">African countries</span></b> are clustedred more closely which means there are <b>lower cases and deaths</b> compared to other continents.</p> 
                 </div>
             </div>
             <!-- end pure grid group -->
@@ -94,12 +97,14 @@
 
             <hr class="hr3">
 
-
-            <h2>Example 3: Zoomable Choropleth map with a time slider</h2>
-            <!-- pure grid group -->
+            <!-- Horizontal Bar Chart -->
+            <h2>Top 10</h2>
             <div class="pure-g">
                 <div class="pure-u-1-1">
+                    <p> Let's discover the <b>top 10 countries</b> for total cases and deaths.</p>
                     <div id="vis3" class="vis-container"></div>
+                    <p>Click on any of the bars to highlight</p>
+                    <p>Again as expected <b>United States of America</b> has the <b>highest amount of cases and deaths</b>.</p> 
                 </div>
             </div>
             <!-- end pure grid group -->
@@ -107,11 +112,13 @@
 
             <hr class="hr3">
 
-            <h2>Example 4: Choropleth map in small multiples</h2>
-            <!-- pure grid group -->
+            <!-- Area Chart -->
+            <h2>So What Can We Conclude?</h2>
             <div class="pure-g">
                 <div class="pure-u-1-1">
+                    <p> We can discover the <b>density dustribution</b> for total cases and deaths per 1 million population.</p>
                     <div id="vis4" class="vis-container"></div>
+                    <p>Hover over any part of the graph and there will be a line following your cursor</p>
                 </div>
             </div>
             <!-- end pure grid group -->
