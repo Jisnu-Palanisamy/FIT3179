@@ -1,29 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "autosize": {"resize": true},
-  "width": 725,
-  "height": 525,
+  "width": 700,
+  "height": 500,
   "title": "How Much Each Continent Contributes To The Death Percentage",
-  "params": [
-    {
-      "name": "limit",
-      "value": 0,
-      "bind": {"input": "range", "min": 0, "max": 150, "step": 1}
-    },
-    {
-      "name": "font",
-      "value": "sans-serif",
-      "bind": {
-        "input": "select",
-        "options": ["sans-serif", "serif", "monospace"]
-      }
-    },
-    {
-      "name": "fontWeight",
-      "value": "normal",
-      "bind": {"input": "select", "options": ["normal", "bold"]}
-    }
-  ],
   "data": {
      "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"
   },
@@ -42,26 +21,11 @@
     "highlight": {"type": "single"}
   },
     "mark": {"type": "arc", "innerRadius": 120, "stroke": "black", "cursor": "pointer"}
-  }, {
-    "mark": {
-        "type": "text",
-        "radius": 300,
-        "dx": -50,
-        "dy": 30,
-        "angle": -45,
-        "yOffset": -60,
-        "xOffset": 10,
-        "align": "center",
-        "font": {"expr": "font"},
-        "fontWeight": {"expr": "fontWeight"},
-        "limit": {"expr": "limit"}
-      },
-    "encoding": {"text": {"field": "Continent", "type": "nominal"}}
   }],
   "encoding": {
     "theta": {
           "field": "PercentOfTotal", "type": "quantitative", "aggregate":"sum", "title": "Death Percentage", "stack":true},
-          "color": {"field": "Continent", "type": "nominal", "legend": null},
+          "color": {"field": "Continent", "type": "nominal"},
               "fillOpacity": {
       "condition": {"selection": "highlight", "value": 1},
       "value": 0.5
