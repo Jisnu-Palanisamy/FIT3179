@@ -17,13 +17,38 @@
 
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-
+    
+    <!-- custom style -->
+    <style>
+        * {font-family: 'Open Sans'; text-align: justify}
+        h1 {font-size: 40px; font-weight: 600; text-align: center; font-weight: 600; padding: 50px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
+        h2 {font-size: 20px; font-weight: 600; width: 40%; padding: 15px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
+        body {background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
+        .page {width: 950px; background-color: white; margin: auto; padding: 50px; padding-top: 35px;}
+        .vline {border-left: 8px solid black; height: 125px; position: relative}
+        .vis-container {width: 100%; text-align: center}
+        .vis-container2 {width: 100%; text-align: center; left: 4%}
+        .text1 {padding-left: 16px}
+        .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 75%; letter-spacing: 0.1em;}
+        .pure-g {margin-bottom: 25px;}
+        .img_class_1 {width: 100%; height: auto;}
+    </style>
 
 </head>
 
 <body>
 
     <div class="page">
+        
+        <!-- Header -->
+        <div class = "pure-g">
+            <div class = "pure-u-1-1">
+                <div class = "img_class_1">
+                    <img src = "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/image1.png" width = "950" height = "300">
+                </div>
+                <h1><b><em>WORLDWIDE COVID-19 CASES IN 2020</h1>
+            </div>
+        </div>
 
         <h2>Example 1: Overview+Detail</h2>
         <!-- pure grid group -->
@@ -87,16 +112,16 @@
 
 
     <script type="text/javascript">
-        var specVis1 = "1_overview_detail.vg.json";
+        var specVis1 = "choropleth_map.vg.json";
         vegaEmbed('#vis1', specVis1);
 
-        var specVis2 = "2_interactive.vg.json";
+        var specVis2 = "bubble_plot.vg.json";
         vegaEmbed('#vis2', specVis2);
 
-        var specVis3 = "3_properties.vg.json";
+        var specVis3 = "horizontal_bar_chart.vg.json";
         vegaEmbed('#vis3', specVis3);
 
-        var specVis4 = "4_small_multiples.vg.json";
+        var specVis4 = "area_chart.vg.json";
         vegaEmbed('#vis4', specVis4);
 
         print(brush)
