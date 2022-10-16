@@ -5,7 +5,7 @@
   },
   "hconcat": [
     {
-      "width": 350,
+      "width": 300,
       "height": 600,
       "transform": [
         {
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "width": 350,
+      "width": 300,
       "height": 600,
       "transform": [
         {
@@ -136,7 +136,7 @@
       "fontSize": 24,
       "fontWeight": "bold",
       "fontStyle": "italic",
-      "forntSize": 10
+      "forntSize": 8
     },
     "text": {
       "align": "left",
