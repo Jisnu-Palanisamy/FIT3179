@@ -35,8 +35,10 @@
         .text1 {padding-left: 16px}
         .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 75%; letter-spacing: 0.1em;}
         .pure-g {margin-bottom: 25px;}
+	.container {position: relative;}
         .img_class_1 {position: relative; top: 25%; left: 8%}
         .img_class_2 {position: relative; top: 25%; right: 8%}
+	.img {width: 100%, height: auto;}
     </style>
 </head>
   
@@ -46,13 +48,16 @@
         <!-- Header -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
-                <div class = "img_class_1">
-                    <img src = "https://raw.githubusercontent.com/Vincent-Cheong/FIT3179/main/Images/Image%201.png" style = "float:left; width: 100px; height: 100px;">
-                </div>
-                <div class = "img_class_2">
-                    <img src = "https://raw.githubusercontent.com/Vincent-Cheong/FIT3179/main/Images/Image%202.png" style = "float:right; width: 100px; height: 100px;">
-                </div>
-                <h1>Worldwide Covid-19 Cases</h1>
+		    <div class = "img">
+                    	<img src = "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/image1.png" width = "1000" height = "300">
+                    </div>
+                    <div class = "img_class_1">
+                        <img src = "https://raw.githubusercontent.com/Vincent-Cheong/FIT3179/main/Images/Image%201.png" style = "float:left; width: 100px; height: 100px;">
+                    </div>
+                    <div class = "img_class_2">
+                        <img src = "https://raw.githubusercontent.com/Vincent-Cheong/FIT3179/main/Images/Image%202.png" style = "float:right; width: 100px; height: 100px;">
+                    </div>
+                    <h1>Worldwide Covid-19 Cases</h1>
             </div>
         </div>
         
@@ -82,7 +87,7 @@
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
-                        <div id = "vis1" class = "vis-container"></div>
+                        <div id = "vis1" class = "container"></div>
                         <p>Note: hover to the country for more details</p>
                         <p><b>America</b> is the <b>top</b> for number of <b>confirmed cases.</b> According to National Geographic (2020), USA recorded more than a thousand deaths on July 21 since June. Many other countries suffer more than thousands of cases. Few countries have very few number of cases. For example, <b>Greenland</b> has the <b>least cases</b>. Perhaps, the cold weather there has connection to it.</p>
                     </div>
@@ -124,7 +129,7 @@
             </div>
             <div class = "pure-u-1-1">
                 <div class = "text1">
-                    <div id = "vis3"  class = "vis-container"></div>
+                    <div id = "vis3"  class = "container"></div>
                     <br>
                     <br>
                     <p>The <b>Americas</b> sustained <b>most cases</b> as a whole but is also due to <b>cases in USA</b> for being <b>top</b> in the world, skewing the reading up, <b>despite better healthcare</b> policies. The <b>African region</b> notably has <b>lowest average</b> case - the continent of a billion people had <b>fewer deaths</b> than most other countries <b>despite fragile health systems</b> generally. Other regions have a reasonable number of average cases. While some countries are wealthier or equipped with better healthcare, the <b>overall figures</b> are within the <b>expected</b> range.</p>
