@@ -3,7 +3,7 @@
   "background": "whitesmoke",
   "width": 725,
   "height": 500,
-  "title": "How Much Each Continent Contributes To The Death Percentage",
+  "title": "How Much Each Continent Contributes To The Death Percentage?",
   "data": {
      "url": "https://raw.githubusercontent.com/Jisnu-Palanisamy/FIT3179/main/COVID-19%20Coronavirus.csv"
   },
